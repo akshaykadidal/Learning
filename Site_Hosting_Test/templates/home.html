@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center py-5">
+    <h1 class="display-4">Welcome to Our Organization</h1>
+    <p class="lead">Advancing the field through collaboration, research, and professional development.</p>
+    <hr class="my-4">
+    <p>Join our community of professionals and contribute to the advancement of our field.</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('membership') }}" role="button">Become a Member</a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <h2>Latest News</h2>
+        {% for item in news %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-text">{{ item.content[:200] }}...</p>
+                <p class="text-muted">{{ item.date_posted.strftime('%B %d, %Y') }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="col-md-6">
+        <h2>Upcoming Events</h2>
+        {% for event in events %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+                <p class="card-text">{{ event.description[:200] }}...</p>
+                <p class="text-muted">{{ event.date.strftime('%B %d, %Y') }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
