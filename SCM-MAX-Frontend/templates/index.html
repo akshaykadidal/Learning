@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SupplyAI - AI Automation Platform for Supply Chain</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                        <polyline points="13 2 13 9 20 9" />
+                    </svg>
+                    <span>SupplyAI</span>
+                </div>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#analytics">Analytics</a></li>
+                    <li><a href="#integrations">Integrations</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline">Log in</button>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AI Automation Platform for <span class="highlight">Supply Chain</span></h1>
+                <p>Fast forward through tasks, unlock quick insights, and boost efficiency with our secure Enterprise Platform.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Request Demo</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard">
+            <div class="container">
+                <div class="grid">
+                    <div class="card task-board">
+                        <h2>Task Board</h2>
+                        <div id="tasks"></div>
+                    </div>
+                    <div class="card metrics">
+                        <h2>Supply Chain KPIs</h2>
+                        <canvas id="metricsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
